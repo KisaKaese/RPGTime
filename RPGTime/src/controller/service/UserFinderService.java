@@ -1,5 +1,5 @@
 package controller.service;
 
-public class userFinderService {
+public class UserFinderService {
 
 }

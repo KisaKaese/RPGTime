@@ -5,7 +5,7 @@ import org.apache.struts2.dispatcher.SessionMap;
 import org.apache.struts2.interceptor.SessionAware;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class login extends ActionSupport implements SessionAware{
+public class Login extends ActionSupport implements SessionAware{
 
 	private static final long serialVersionUID = 4219456207976589220L;
 	private SessionMap<String, Object> session;
