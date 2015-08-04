@@ -2,8 +2,8 @@ package controller.models;
 
 public class Character {
 	private String name;
-	private int characterID;
-	
+	private int characterID, playerID;
+		
 	public Character(String name, int characterID){
 		this.characterID = characterID;
 		this.name = name;
@@ -20,6 +20,14 @@ public class Character {
 	}
 	public void setCharacterID(int characterID) {
 		this.characterID = characterID;
+	}
+
+	public int getPlayerID() {
+		return playerID;
+	}
+
+	public void setPlayerID(int playerID) {
+		this.playerID = playerID;
 	}
 	
 }

@@ -1,5 +1,11 @@
 package controller.service;
 
-public class UserFinderService {
+import database.UserDAO;
 
+public class UserFinderService {
+	private UserDAO users = new UserDAO();
+	
+	public boolean login(String username, String password){
+		return users.login(username, password);
+	}
 }

@@ -1,12 +1,13 @@
 package controller.models;
 
 public class User {
-	private String username;
+	private String username, password;
 	private int userID;
 
-	public User(int userID, String username){
+	public User(int userID, String username, String password){
 		this.userID = userID;
 		this.username = username;
+		this.password = password;
 	}
 	
 	public String getUsername() {
@@ -20,6 +21,14 @@ public class User {
 	}
 	public void setUserID(int userID) {
 		this.userID = userID;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 }
