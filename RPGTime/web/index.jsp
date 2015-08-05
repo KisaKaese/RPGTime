@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title>Login</title>
+<title>Index</title>
 <meta name="generator" content="Bootply" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -34,8 +34,8 @@
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Posts <span class="sr-only">(current)</span></a></li>
-				<li><a href="#">Charaktere</a></li>
+				<li class="active"><a href="postListing.jsp">Posts <span class="sr-only">(current)</span></a></li>
+				<li><a href="characterListing.jsp">Charaktere</a></li>
 			</ul>
 			<form class="navbar-form navbar-left" role="search">
 				<div class="form-group">
@@ -43,16 +43,35 @@
 				</div>
 				<button type="submit" class="btn btn-default">Suchen</button>
 			</form>
+			<%
+				session = request.getSession(false);
+				if (session.getAttribute("userID") != null) {
+			%>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="logout.action">Logout (<s:property
+							value="#session['user']" />)
+				</a></li>
+			</ul>
+			<%
+				} else {
+			%>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="login.jsp">Login</a></li>
 			</ul>
+			<%
+				}
+			%>
 		</div>
 		<!-- /.navbar-collapse -->
 	</div>
 	<!-- /.container-fluid --> </nav>
 
-
-
-	<!-- CONTENT -->
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header"></div>
+			<div class="modal-body"></div>
+		</div>
+	</div>
+		<!-- CONTENT -->
 </body>
 </html>

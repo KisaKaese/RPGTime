@@ -34,8 +34,8 @@
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Posts <span class="sr-only">(current)</span></a></li>
-				<li><a href="#">Charaktere</a></li>
+				<li class="active"><a href="postListing.jsp">Posts <span class="sr-only">(current)</span></a></li>
+				<li><a href="characterListing.jsp">Charaktere</a></li>
 			</ul>
 			<form class="navbar-form navbar-left" role="search">
 				<div class="form-group">
@@ -43,9 +43,24 @@
 				</div>
 				<button type="submit" class="btn btn-default">Suchen</button>
 			</form>
+			<%
+				session = request.getSession(false);
+				if (session.getAttribute("userID") != null) {
+			%>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="logout.action">Logout (<s:property
+							value="#session['user']" />)
+				</a></li>
+			</ul>
+			<%
+				} else {
+			%>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="login.jsp">Login</a></li>
 			</ul>
+			<%
+				}
+			%>
 		</div>
 		<!-- /.navbar-collapse -->
 	</div>
@@ -62,9 +77,17 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<h1 class="text-center">Login</h1>
+				<h2 class="text-center">
+					<s:property value="infoMessage" />
+				</h2>
 			</div>
 			<div class="modal-body">
-				<s:form class="form col-md-12 center-block" action="login" method="post">
+				<%
+					session = request.getSession(false);
+					if (session.getAttribute("userID") == null) {
+				%>
+				<s:form class="form col-md-12 center-block" action="login"
+					method="post">
 					<div class="form-group">
 						<input name="username" type="text" class="form-control input-lg"
 							placeholder="Benutzername">
@@ -74,9 +97,20 @@
 							class="form-control input-lg" placeholder="Passwort">
 					</div>
 					<div class="form-group">
-						<button class="btn btn-primary btn-lg btn-block" type="submit">Sign In</button>
+						<button class="btn btn-primary btn-lg btn-block" type="submit">Sign
+							In</button>
 					</div>
 				</s:form>
+				<%
+					} else {
+				%>
+				<div class="form-group">
+					<h2 class="text-center">Du bist bereits eingeloggt</h2>
+
+				</div>
+				<%
+					}
+				%>
 			</div>
 			<div class="modal-footer"></div>
 		</div>

@@ -13,14 +13,14 @@ public class UserDAO {
 		users.add(user);
 	}
 	
-	public boolean login(String username, String password){
+	public User login(String username, String password){
 		for(User u:users){
 			if(u.getUsername().equals(username)&&
 			u.getPassword().equals(password)){
-				return true;
+				return u;
 			}
 		}
-		return false;
+		return null;
 	}
 	public List<User> getUsers() {
 		return users;

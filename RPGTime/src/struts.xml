@@ -2,13 +2,16 @@
 <!DOCTYPE struts PUBLIC
 	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
 	"http://struts.apache.org/dtds/struts-2.0.dtd">
-	
+
 <struts>
-	<package name = "default" extends = "struts-default">
+	<package name="default" extends="struts-default">
 		<action name="login" class="controller.action.Login">
 			<result name="success">/index.jsp</result>
 			<result name="error">/login.jsp</result>
 			<result name="input">/login.jsp</result>
+		</action>
+		<action name="logout" class="controller.action.Logout">
+			<result name="success">/index.jsp</result>
 		</action>
 	</package>
 </struts>
