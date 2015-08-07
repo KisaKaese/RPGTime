@@ -35,7 +35,7 @@
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="postListing.jsp">Posts <span class="sr-only">(current)</span></a></li>
-				<li><a href="characterListing.jsp">Charaktere</a></li>
+				<li><a href="characterListing.action">Charaktere</a></li>
 			</ul>
 			<form class="navbar-form navbar-left" role="search">
 				<div class="form-group">

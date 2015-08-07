@@ -34,8 +34,9 @@
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="postListing.action">Posts <span class="sr-only">(current)</span></a></li>
-				<li><a href="characterListing.jsp">Charaktere</a></li>
+				<li class="active"><a href="postListing.action">Posts <span
+						class="sr-only">(current)</span></a></li>
+				<li><a href="characterListing.action">Charaktere</a></li>
 			</ul>
 			<form class="navbar-form navbar-left" role="search">
 				<div class="form-group">
@@ -65,19 +66,33 @@
 		<!-- /.navbar-collapse -->
 	</div>
 	<!-- /.container-fluid --> </nav>
-
+	<s:iterator value="posts">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<s:property value="CharacterName" />
+				</div>
+				<div class="modal-body">
+					<s:property value="text" />
+				</div>
+			</div>
+		</div>
+	</s:iterator>
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<s:iterator value="posts">
 			<div class="modal-header">
-				<s:property value="CharakterName"/>
+				<s:select class="btn btn-default dropdown-toggle" label="Charakter" name="characters" headerKey="-1"
+					headerValue="Charakter auswählen" 
+					list="#{'Steve': 'Steve', 'Daichi':'Daichi' }"
+					value="character" required="true" />
 			</div>
 			<div class="modal-body">
-				<s:property value="CharakterName"/>
+				<textarea class="form-control" name="text" rows="10" cols="50"></textarea>
+				<button class="btn btn-primary btn-lg btn-block" type="submit">Post</button>
 			</div>
-			</s:iterator>
 		</div>
 	</div>
-		<!-- CONTENT -->
+
+	<!-- CONTENT -->
 </body>
 </html>

@@ -1,7 +1,7 @@
 package controller.models;
 
 public class Post {
-	private String text, dateTime, ChacterName;
+	private String text, dateTime, CharacterName;
 	private int PostID, PostedBy, CharacterID;
 
 	public Post(String text, String dateTime, int PostID, int PostedBy, int CharacterID, String name) {
@@ -10,7 +10,7 @@ public class Post {
 		this.CharacterID = CharacterID;
 		this.PostedBy = PostedBy;
 		this.PostID = PostID;
-		this.ChacterName = name;
+		this.CharacterName = name;
 	}
 
 	public String getText() {
@@ -53,11 +53,15 @@ public class Post {
 		CharacterID = characterID;
 	}
 
-	public String getChacterName() {
-		return ChacterName;
+	public String getCharacterName() {
+		return CharacterName;
 	}
 
-	public void setChacterName(String chacterName) {
-		ChacterName = chacterName;
+	public void setCharaterName(String characterName) {
+		CharacterName = characterName;
+	}
+	public void printPost(){
+		System.out.println(this.CharacterName);
+		System.out.println(this.text);
 	}
 }

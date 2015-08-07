@@ -16,6 +16,7 @@ public class ShowPosts extends ActionSupport implements SessionAware {
 	private static final long serialVersionUID = 1L;
 	private PostFinderService postFinder = new PostFinderService();
 	private List<Post> posts = new LinkedList<Post>();
+	private List<Character> characters = new LinkedList<Character>();
 	
 	public String execute(){
 		this.posts = this.postFinder.getAllPosts();
@@ -51,5 +52,11 @@ public class ShowPosts extends ActionSupport implements SessionAware {
 	}
 	public void setPosts(List<Post> posts) {
 		this.posts = posts;
+	}
+	public List<Character> getCharacters() {
+		return characters;
+	}
+	public void setCharacters(List<Character> characters) {
+		this.characters = characters;
 	}
 }
