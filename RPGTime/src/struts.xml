@@ -13,5 +13,8 @@
 		<action name="logout" class="controller.action.Logout">
 			<result name="success">/index.jsp</result>
 		</action>
+		<action name="postListing" class="controller.action.ShowPosts">
+			<result name = "success">/postListing.jsp</result>
+		</action>
 	</package>
 </struts>

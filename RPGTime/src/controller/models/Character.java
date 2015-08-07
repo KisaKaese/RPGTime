@@ -1,12 +1,13 @@
 package controller.models;
 
 public class Character {
-	private String name;
-	private int characterID, playerID;
+	private String name, player;
+	private int characterID;
 		
-	public Character(String name, int characterID){
+	public Character(String name, int characterID, String playedBy){
 		this.characterID = characterID;
 		this.name = name;
+		this.player = playedBy;
 	}
 	
 	public String getName() {
@@ -22,12 +23,12 @@ public class Character {
 		this.characterID = characterID;
 	}
 
-	public int getPlayerID() {
-		return playerID;
+	public String getPlayer() {
+		return player;
 	}
 
-	public void setPlayerID(int playerID) {
-		this.playerID = playerID;
+	public void setPlayerID(String player) {
+		this.player = player;
 	}
 	
 }

@@ -1,17 +1,18 @@
 package controller.models;
 
 public class Post {
-	private String text, dateTime;
+	private String text, dateTime, ChacterName;
 	private int PostID, PostedBy, CharacterID;
 
-	public Post(String text, String dateTime, int PostID, int PostedBy, int CharacterID){
+	public Post(String text, String dateTime, int PostID, int PostedBy, int CharacterID, String name) {
 		this.dateTime = dateTime;
 		this.text = text;
 		this.CharacterID = CharacterID;
 		this.PostedBy = PostedBy;
 		this.PostID = PostID;
+		this.ChacterName = name;
 	}
-	
+
 	public String getText() {
 		return text;
 	}
@@ -50,5 +51,13 @@ public class Post {
 
 	public void setCharacterID(int characterID) {
 		CharacterID = characterID;
+	}
+
+	public String getChacterName() {
+		return ChacterName;
+	}
+
+	public void setChacterName(String chacterName) {
+		ChacterName = chacterName;
 	}
 }
