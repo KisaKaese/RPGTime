@@ -8,9 +8,9 @@ public class CharacterDAO {
 	private List<Character> chars = new LinkedList<Character>();
 	
 	public CharacterDAO(){
-		Character c = new Character("Steve", 1, "Jenni");
+		Character c = new Character("Steve", 1, "Jenni", 1);
 		chars.add(c);
-		c = new Character("Daichi", 2, "Anja");
+		c = new Character("Daichi", 2, "Anja", 2);
 		chars.add(c);
 	}
 

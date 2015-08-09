@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title>Login</title>
+<title>Posts</title>
 <meta name="generator" content="Bootply" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -33,10 +33,18 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
+			<%
+				session = request.getSession(false);
+				if (session.getAttribute("userID") != null) {
+			%>
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="postListing.action">Posts <span class="sr-only">(current)</span></a></li>
+				<li class="active"><a href="postListing.action">Posts <span
+						class="sr-only">(current)</span></a></li>
 				<li><a href="characterListing.action">Charaktere</a></li>
 			</ul>
+			<%
+				}
+			%>
 			<form class="navbar-form navbar-left" role="search">
 				<div class="form-group">
 					<input type="text" class="form-control" placeholder="Suche">

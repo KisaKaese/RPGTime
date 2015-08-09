@@ -2,12 +2,13 @@ package controller.models;
 
 public class Character {
 	private String name, player;
-	private int characterID;
+	private int characterID, playerID;
 		
-	public Character(String name, int characterID, String playedBy){
+	public Character(String name, int characterID, String playedBy, int playerID){
 		this.characterID = characterID;
 		this.name = name;
 		this.player = playedBy;
+		this.playerID = playerID;
 	}
 	
 	public String getName() {
@@ -30,5 +31,20 @@ public class Character {
 	public void setPlayerID(String player) {
 		this.player = player;
 	}
-	
+	public String toString(){
+        try {
+			return this.getName();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "";
+		}
+	}
+
+	public int getPlayerID() {
+		return playerID;
+	}
+
+	public void setPlayerID(int playerID) {
+		this.playerID = playerID;
+	}
 }
