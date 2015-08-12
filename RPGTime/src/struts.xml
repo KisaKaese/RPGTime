@@ -14,7 +14,12 @@
 			<result name="success">/index.jsp</result>
 		</action>
 		<action name="postListing" class="controller.action.ShowPosts">
-			<result name = "success">/postListing.jsp</result>
+			<result name="success">/postListing.jsp</result>
+			<result name="error">/postListing.jsp</result>
+		</action>
+		<action name="characterListing" class="controller.action.ShowCharacters">
+			<result name="success">/characterListing.jsp</result>
+			<result name="error">/characterListing.jsp</result>
 		</action>
 	</package>
 </struts>

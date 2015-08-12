@@ -76,11 +76,33 @@
 
 	<!-- CONTENT -->
 
+	<%
+		session = request.getSession(false);
+		if (session.getAttribute("level") != null) {
+	%>
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<div class="modal-header"></div>
-			<div class="modal-body"></div>
+			<div class="modal-body">
+				<textarea class="form-control" name="text" rows="1" cols="1"></textarea>
+				<button class="btn btn-primary btn-lg btn-block" type="submit">Neuen Charakter hinzufügen</button>
+			</div>
 		</div>
 	</div>
+	<s:iterator value="chars">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header"><s:property value="name"/> </div>
+			<div class="modal-body">Gespielt von: <s:property value="player"/></div>
+		</div>
+	</div>
+	</s:iterator>
+	<%
+		} else {
+	%>
+	<div class="modal-header">Dir ist nicht erlaubt diesen Bereich
+		einzusehen</div>
+	<%
+		}
+	%>
 </body>
 </html>

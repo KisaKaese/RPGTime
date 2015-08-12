@@ -1,4 +1,5 @@
 package controller.action;
+
 import java.util.Map;
 import controller.models.*;
 import org.apache.struts2.dispatcher.SessionMap;
@@ -7,25 +8,28 @@ import com.opensymphony.xwork2.ActionSupport;
 import org.apache.commons.lang3.StringUtils;
 import controller.service.UserFinderService;
 
-public class Login extends ActionSupport implements SessionAware{
+public class Login extends ActionSupport implements SessionAware {
 
 	private static final long serialVersionUID = 1L;
 	private SessionMap<String, Object> session;
 	private UserFinderService users = new UserFinderService();
 	private String username, password, infoMessage;
-	
-	public String execute(){
+
+	public String execute() {
 		User u = users.login(this.username, this.password);
-		if(u!=null){
+		if (u != null) {
 			this.session.put("user", username);
 			this.session.put("userID", u.getUserID());
+			if (u.getLevel()==2) {
+				this.session.put("level", u.getLevel());
+			}
 			return "success";
-		}else if (this.username!=null&&this.password!=null){
+		} else if (this.username != null && this.password != null) {
 			setInfoMessage("Bitte versuche es erneut");
 		}
 		return "error";
 	}
-	
+
 	@Override
 	public void setSession(Map<String, Object> map) {
 		session = (SessionMap<String, Object>) map;
@@ -38,12 +42,12 @@ public class Login extends ActionSupport implements SessionAware{
 	public void setSession(SessionMap<String, Object> session) {
 		this.session = session;
 	}
-	
-	public void validate(){
-		if(StringUtils.isEmpty(this.username)){
+
+	public void validate() {
+		if (StringUtils.isEmpty(this.username)) {
 			addFieldError("username", "Bitte gib deinen Benutzernamen ein");
 		}
-		if(StringUtils.isEmpty(this.password)){
+		if (StringUtils.isEmpty(this.password)) {
 			addFieldError("password", "Bitte gib dein Passwort ein");
 		}
 	}

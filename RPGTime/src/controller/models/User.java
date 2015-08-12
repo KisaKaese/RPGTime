@@ -2,8 +2,14 @@ package controller.models;
 
 public class User {
 	private String username, password;
-	private int userID;
+	private int userID, level;
 
+	public User(int userID, String username, String password, int level){
+		this.userID = userID;
+		this.username = username;
+		this.password = password;
+		this.level = level;
+	}
 	public User(int userID, String username, String password){
 		this.userID = userID;
 		this.username = username;
@@ -29,6 +35,14 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public int getLevel() {
+		return level;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
 	}
 	
 }

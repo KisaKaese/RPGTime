@@ -73,9 +73,14 @@
 		<!-- /.navbar-collapse -->
 	</div>
 	<!-- /.container-fluid --> </nav>
-	
+
 	<!-- CONTENT -->
-	
+
+
+	<%
+		session = request.getSession(false);
+		if (session.getAttribute("level") != null) {
+	%>
 	<s:iterator value="posts">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -92,7 +97,8 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<s:select class="btn btn-default dropdown-toggle" label="Charakter"
-				headerKey="-1" headerValue="Charakter auswählen" list="characterNames"/>
+					headerKey="-1" headerValue="Charakter auswählen"
+					list="characterNames" />
 			</div>
 			<div class="modal-body">
 				<textarea class="form-control" name="text" rows="10" cols="50"></textarea>
@@ -100,6 +106,14 @@
 			</div>
 		</div>
 	</div>
+	<%
+		} else {
+	%>
+	<div class="modal-header">Dir ist nicht erlaubt diesen Bereich
+		einzusehen</div>
+	<%
+		}
+	%>
 
 </body>
 </html>

@@ -7,9 +7,9 @@ public class UserDAO {
 	private List<User> users = new LinkedList<User>();
 
 	public UserDAO(){
-		User user = new User(1, "Jenni", "password");
+		User user = new User(1, "Jenni", "password", 2);
 		users.add(user);
-		user = new User(2, "Anja", "password");
+		user = new User(2, "Anja", "password", 1);
 		users.add(user);
 	}
 	

@@ -25,13 +25,14 @@ public class ShowPosts extends ActionSupport implements SessionAware {
 	private List<String> characterNames = new LinkedList<String>();
 
 	public String execute(){
+		if(this.session.get("userID")== null){
+			return "error";
+		}
 		this.posts = this.postFinder.getAllPosts();
 		this.characters = this.characterFinder.getCharacters();
 		if(this.posts!=null){
 			if(this.characters!=null){
 				for(Character c:this.characters){
-					System.out.println((int) this.session.get("userID"));
-					System.out.println(c.getPlayerID());
 					if((int) this.session.get("userID")== c.getPlayerID()){
 						this.characterNames.add(c.getName());
 					}
