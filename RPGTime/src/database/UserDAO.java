@@ -9,7 +9,9 @@ public class UserDAO {
 	public UserDAO(){
 		User user = new User(1, "Jenni", "password", 2);
 		users.add(user);
-		user = new User(2, "Anja", "password", 1);
+		user = new User(2, "Anja", "password", 2);
+		users.add(user);
+		user = new User(3, "Noob", "password", 1);
 		users.add(user);
 	}
 	
