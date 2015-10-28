@@ -3,9 +3,9 @@ import java.sql.*;
 
 public class DBConnection {
 
-    String url = "jdbc:mysql://195.37.176.178:11336/dbwebanw_sose15_07";
-    String user = "dbweb_user_07";
-    String pass = "LPtCLVYnSh";
+    String url = "jdbc:mysql://127.0.0.1:3306/rpg_time";
+    String user = "root";
+    String pass = "izHI9GZz78yJxc";
     Connection connection = null;
     Statement stmt = null;
 

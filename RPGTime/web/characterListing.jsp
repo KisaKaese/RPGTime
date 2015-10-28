@@ -80,21 +80,33 @@
 		session = request.getSession(false);
 		if (session.getAttribute("level") != null) {
 	%>
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-body">
-				<textarea class="form-control" name="text" rows="1" cols="1"></textarea>
-				<button class="btn btn-primary btn-lg btn-block" type="submit">Neuen Charakter hinzufügen</button>
+	<s:form class="form col-md-12 center-block" action="createChar"
+		method="post">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<div class="form-group">
+						<input name="name" type="text" class="form-control input-lg"
+							placeholder="Charakter Name">
+					</div>
+					<button class="btn btn-primary btn-lg btn-block" type="submit">Neuen
+						Charakter hinzufügen</button>
+				</div>
 			</div>
 		</div>
-	</div>
+	</s:form>
 	<s:iterator value="chars">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header"><s:property value="name"/> </div>
-			<div class="modal-body">Gespielt von: <s:property value="player"/></div>
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<s:property value="name" />
+				</div>
+				<div class="modal-body">
+					Gespielt von:
+					<s:property value="player" />
+				</div>
+			</div>
 		</div>
-	</div>
 	</s:iterator>
 	<%
 		} else {
