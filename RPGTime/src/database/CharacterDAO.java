@@ -47,9 +47,11 @@ public class CharacterDAO {
 	}
 
 	public void createCharacter(Character character) {
+		System.out.println(character.getName());
+		System.out.println(character.getPlayer());
 		try {
 			createCharacter.setString(1, character.getName());
-			createCharacter.setString(2, character.getPlayer());
+			createCharacter.setInt(2, character.getPlayerID());
 			createCharacter.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println("Character konnte nicht erstellt werden");

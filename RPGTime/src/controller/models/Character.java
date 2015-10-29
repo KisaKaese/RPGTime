@@ -10,7 +10,11 @@ public class Character {
 		this.player = playedBy;
 		this.playerID = playerID;
 	}
-	
+	public Character(String name, String playedBy, int playerID){
+		this.name = name;
+		this.player = playedBy;
+		this.playerID = playerID;
+	}
 	public String getName() {
 		return name;
 	}

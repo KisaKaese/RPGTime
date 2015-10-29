@@ -21,5 +21,9 @@
 			<result name="success">/characterListing.jsp</result>
 			<result name="error">/characterListing.jsp</result>
 		</action>
+		<action name="createCaracter" class="controller.action.createCharacter">
+			<result name="success" type="redirectAction">characterListing</result>
+			<result name="error" type="redirectAction">characterListing</result>
+		</action>
 	</package>
 </struts>

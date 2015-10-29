@@ -80,7 +80,7 @@
 		session = request.getSession(false);
 		if (session.getAttribute("level") != null) {
 	%>
-	<s:form class="form col-md-12 center-block" action="createChar"
+	<s:form class="form col-md-12 center-block" action="createCaracter"
 		method="post">
 		<div class="modal-dialog">
 			<div class="modal-content">

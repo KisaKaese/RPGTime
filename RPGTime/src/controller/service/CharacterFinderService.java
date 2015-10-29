@@ -10,4 +10,8 @@ public class CharacterFinderService {
 	public List<Character> getCharacters(){
 		return this.chars.getChars();
 	}
+	public void createCharacter(String name, int playerID, String playedBy){
+		Character c = new Character(name, playedBy, playerID);
+		this.chars.createCharacter(c);
+	}
 }
